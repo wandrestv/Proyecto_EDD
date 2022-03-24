@@ -1,0 +1,26 @@
+{% extends "inicio.html" %}
+{% block titulo %}
+  Eliminar Departamento
+{% endblock %}
+{% load static %}
+{% block css %} 
+
+{% endblock %}
+{% block contenido %}
+    <section class="form-container">
+        <div class="form-header">
+            <h1>Eliminación de Departamentos</h1>
+        </div>
+        <form method="POST" id="form-cargo" class="form">
+            {% csrf_token %}
+            <h2>¿Desea eliminar el Cargo ➡ 
+                <span style="color:red">{{departamento.descripcion}}</span> 
+            </h2>
+            <button style="background:red;border-radius:5px;color:white;cursor:pointer"
+                type="submit">Eliminar
+            </button>
+            <a style="text-align:center;display:block;background:green;border-radius:5px;padding:5px;color:white;cursor:pointer"
+                href="{% url 'lista_departamento' %}">Cancelar</a>
+        </form>
+    </section>
+{% endblock %}

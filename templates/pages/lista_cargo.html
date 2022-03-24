@@ -1,0 +1,41 @@
+{% extends "inicio.html" %}
+{% block titulo %}
+    Cargos
+{% endblock %}
+{% load static %}
+{% block css %}
+
+{% endblock %}
+
+{% block contenido %}
+<section class="form-container">
+    <div class="consulta none table-responsive" id="consulta">
+        <h2>Listado de Cargos</h2>
+        <a style="display:block;background:green;border-radius:5px;padding:5px;color:white;cursor:pointer"
+                href="{% url 'crear_cargo' %}">Crear Cargo</a>
+        <table class="consulta-est" id="consulta-est" border="0">
+            <thead>
+                <th>#</th>
+                <th>Descripcion</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+            </thead>
+            <tbody class="detalle-est" id="detalle-est">
+                
+                {% for cargo in cargos %}
+                <tr>
+                    <td>{{cargo.id}}</td>
+                    <td>{{cargo.descripcion}}</td>
+                    <td>{{cargo.estado}}</td>
+                    <td class="acciones">
+                        <a href="{% url 'editar_cargo' cargo.id %}">✏️</a>
+                        <a href="{% url 'eliminar_cargo' cargo.id %}">❌</a>
+                    </td>
+                {% endfor %}    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+{% endblock %}

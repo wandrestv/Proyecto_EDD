@@ -1,0 +1,42 @@
+.header{
+    background-color: var(--primary-color);
+    border-radius: 5px; 
+  }
+  .navegacion{
+      display: inline-flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 10px;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    font-weight: 900;
+    color: var(--font-color-reverse);
+    margin-left: 5px;
+  }
+  
+  .logo img{
+    border-radius:50%;
+  }
+  .menu{
+      display: flex;
+  }
+  .menu li {
+    padding: 0 20px;
+    text-align: right;
+  }
+  /* media querys */
+  /* en dispositivos de 0 a 760px se aplican estos estilos*/
+  @media (max-width: 760px) {
+   .navegacion {
+     margin-top: 10px;
+    }
+    .menu {
+      flex-wrap: wrap; /* ocupe el ancho del viewport */
+      justify-content: center;
+      margin: 20px auto;
+    }
+  }

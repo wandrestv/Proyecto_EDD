@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+    <link rel="stylesheet" href="{% static 'css/form.css' %}">
+    <link rel="stylesheet" href="{% static 'css/header.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    {% block css %} {% endblock %}
+    <title> {% block titulo %} Inicio {% endblock %} </title>
+</head>
+<body>
+    <header class="header">
+        <nav class="navegation">
+            <a href="{% url 'inicio' %}" class="logo">
+                <img src="{% static 'img/logo1.png' %}" width="60px" alt="logo">
+                <div class="logo">
+                    Nómina de Empleados
+                </div>
+            </a>
+            <ul class="menu">
+                <li><a href="{% url 'lista_cargo' %}">Cargos</a></li>
+                <li><a href="{% url 'lista_departamento' %}">Departamentos</a></li>
+                <li><a href="{% url 'lista_empleado' %}">Empleados</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block contenido %}
+            <section class="principal">
+                <h1>¡Bienvenidos!</h1>
+                <img width="600px" src="{% static 'img/logo2.png' %}" alt="Sin imagen">
+            </section>
+        {% endblock %}
+    </main>
+</body>
+</html>

@@ -1,0 +1,30 @@
+{% extends "inicio.html" %}
+{% block titulo %}
+    Empleados
+{% endblock %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+{% endblock %}
+
+{% block contenido %}
+<section class="form-container">
+    <div class="form-header">
+        <h1>Formulario de Empleados</h1> 
+    </div>
+    <form method="POST" id="form-cargo" class="form">
+        {% csrf_token %}
+        {{empleForm.as_p}}
+        <button 
+            id="enviar"
+            type="submit"
+            name="enviar">
+            {{accion}}
+        </button>
+
+        <a style="text-align:center;display:block;background:orange;border-radius:5px;padding:5px;color:white;cursor:pointer"
+            href="{% url 'lista_empleado' %}">Cancelar</a>
+    </form>
+</section>
+
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends "inicio.html" %}
+{% block titulo %}
+    Departamentos
+{% endblock %}
+{% load static %}
+{% block css %}
+
+{% endblock %}
+
+{% block contenido %}
+<section class="form-container">
+    <div class="consulta none table-responsive" id="consulta">
+        <h2>Listado de Departamentos</h2>
+        <a style="display:block;background:green;border-radius:5px;padding:5px;color:white;cursor:pointer"
+                href="{% url 'crear_departamento' %}">Crear Departamento</a>
+        <table class="consulta-est" id="consulta-est" border="0">
+            <thead>
+                <th>#</th>
+                <th>Descripcion</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+            </thead>
+            <tbody class="detalle-est" id="detalle-est">
+                {% for departamento in departamentos %}
+                <tr>
+                    <td>{{departamento.id}}</td>
+                    <td>{{departamento.descripcion}}</td>
+                    <td>{{departamento.estado}}</td>
+                    <td class="acciones">
+                        <a href="{% url 'editar_departamento' departamento.id %}">✏️</a>
+                        <a href="{% url 'eliminar_departamento' departamento.id %}">❌</a>
+                    </td>
+                {% endfor %}    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+{% endblock %}
