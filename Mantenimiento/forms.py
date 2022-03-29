@@ -28,10 +28,15 @@ class DepartamentoForm(forms.ModelForm):
 class EmpleadoForm(forms.ModelForm):
     class Meta:
         model = Empleado
-        fields = ['nombre','cargo','departamento','sueldo','estado']
+        fields = ['nombre','cedula','cargo','departamento','sueldo','estado']
         widgets = {
             'nombre':forms.TextInput(attrs={
                 'placeholder':'Ingrese nombre',
+                'class':'form-group',
+                'required':True
+            }),
+            'cedula':forms.TextInput(attrs={
+                'placeholder':'Ingrese cedula',
                 'class':'form-group',
                 'required':True
             }),

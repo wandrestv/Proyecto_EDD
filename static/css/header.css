@@ -1,33 +1,43 @@
 .header{
     background-color: var(--primary-color);
-    border-radius: 5px; 
-  }
+    opacity: 0.85;
+}
   .navegacion{
-      display: inline-flex;
-      flex-direction: row-reverse;
-      justify-content: space-between;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
       align-items: center;
-      max-width: 10px;
+      max-width: 600px;
   }
   
   .logo {
     display: flex;
-    align-items: center;
-    font-weight: 900;
+    align-items: left;
+    font-weight: 1000;
     color: var(--font-color-reverse);
-    margin-left: 5px;
+    margin-left: 20px;
   }
   
   .logo img{
-    border-radius:50%;
+    border-radius:0%;
+
   }
   .menu{
-      display: flex;
+    display: flex;
+    padding: 10px;
+    text-align: center;
   }
   .menu li {
-    padding: 0 20px;
-    text-align: right;
+    display: flex;
+    padding: 20px 30px;
+    align-items: center;
+    font-weight: 500;
+    background: var(--boton-success);
   }
+  .menu li:hover {
+    background: green;
+  }
+
   /* media querys */
   /* en dispositivos de 0 a 760px se aplican estos estilos*/
   @media (max-width: 760px) {

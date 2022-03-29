@@ -2,49 +2,57 @@
     background-color: var(--boton-secundary);
     max-width: 80%;
     min-width: 240px;
-    border-radius: 10px;
     box-shadow: 0px 5px 16px 0px var(--primary-color);
     overflow: hidden;
     color: var(--font-color-reverse);
     font-weight: 900;
     margin: 0 auto;
   }
-  .form-header {
+.form-header {
     background: var(--primary-color);
-    padding: 1px;
+    padding: 10px;
     text-align: center;
-     border-bottom: 5px solid var(--font-color-reverse);
-     line-height:30px;
+    border-bottom: 5px solid var(--font-color-reverse);
+    line-height:30px;
     }
-   .form-header h1{
+.form-header h1{
      color: var(--boton-warning);
      font-size: 32px;
   } 
-   form {
-    padding: 5px 40px;
+form {
+    padding: 10px 40px;
   } 
-  .form-group input,
-  .form-group select,
-  .form-group textarea {
+.form input{
+    display: flex;
+    width: 100%;
+    padding: 5px;
+  }
+.form select{
+    width: 100%;
+    padding: 5px;
+  }
+.form-group textarea {
     display: block;
     width: 100%;
-     padding: 5px;
-     margin: 5px;
-     font-size: 1rem;
-     border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+    font-size: 1rem;
+    border-radius: 5px;
   }
-  .form label {
+.form label {
     margin: 5px auto;
     display: block;
+    text-align: center;
   }
-  .form-group *::placeholder {
+.form-group *::placeholder {
     color: var(--primary-color);
-    font-size:20px
+    font-size:20px;
+    text-align: center;
   }
-  .form-check input[type="checkbox"] {
+.form-check input[type="checkbox"] {
     margin: 15px auto;
   }
-  .form button {
+.form button {
     display: block;
     width: 100%;
     padding: 8px;
@@ -57,12 +65,12 @@
     text-transform: uppercase;
     transition: background-color 0.3s ease-in-out;
   }
-  .form button:hover {
+.form button:hover {
     background-color: var(--boton-warning);
     color:var(--font-color-reverse)
   }
   
-  .table-responsive {
+.table-responsive {
           width: 100%;
           overflow-y: hidden;
           -ms-overflow-style: -ms-autohiding-scrollbar;
@@ -71,36 +79,36 @@
           justify-content: center;
           align-items: center;
   }
-  .consulta h2{
+.consulta h2{
      color: var(--font-color-reverse);
      text-transform: uppercase;
      margin-bottom: 3px;
   }
-  .consulta-est{
+.consulta-est{
      width: 100%;
     }
-  .consulta-est th{
+.consulta-est th{
     background-color: var(--boton-warning);
     color:var(--font-color-reverse);
     font-size:20px;
     text-align:center;
    
   }
-  .consulta-est th, td {
+.consulta-est th, td {
      width: 25%;
      text-align: center;
   }
-  .detalle-est button{
+.detalle-est button{
     background-color: var(--primary-color);
     border-radius: 5px;
     border: 2px solid var(--boton-warning);
     cursor: pointer;
     transition: background-color .3s ease-in-out;
   }
-  .detalle-est button:hover{
+.detalle-est button:hover{
     background-color: var(--boton-warning);
     
   }
-  .detalle-est .acciones{
+.detalle-est .acciones{
     text-align: center;
   }

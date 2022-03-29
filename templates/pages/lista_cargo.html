@@ -4,14 +4,14 @@
 {% endblock %}
 {% load static %}
 {% block css %}
-
+<link rel="stylesheet" href="{% static 'css/form.css' %}">
 {% endblock %}
 
 {% block contenido %}
 <section class="form-container">
     <div class="consulta none table-responsive" id="consulta">
         <h2>Listado de Cargos</h2>
-        <a style="display:block;background:green;border-radius:5px;padding:5px;color:white;cursor:pointer"
+        <a style="display:block;background:gray;border-radius:5px;padding:8px 100px;color:white;cursor:pointer;margin:15px"
                 href="{% url 'crear_cargo' %}">Crear Cargo</a>
         <table class="consulta-est" id="consulta-est" border="0">
             <thead>
@@ -26,7 +26,11 @@
                 <tr>
                     <td>{{cargo.id}}</td>
                     <td>{{cargo.descripcion}}</td>
-                    <td>{{cargo.estado}}</td>
+                    <td>{% if cargo.estado %}
+                        Activo
+                        {% else %}
+                        Inactivo
+                        {% endif %}</td>
                     <td class="acciones">
                         <a href="{% url 'editar_cargo' cargo.id %}">✏️</a>
                         <a href="{% url 'eliminar_cargo' cargo.id %}">❌</a>

@@ -13,6 +13,7 @@
   }
   /** reseteo de estilos */
   html {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     box-sizing: border-box; /** no afecte al tamaño de la caja el margin ni el padding y borde */
     font-size: var(--font-size);
     scroll-behavior: smooth; /** aplica una transiccion no subita eal cambiar de seccion */
@@ -20,12 +21,12 @@
   }
   /** todos los elementos hereden el box-sizing: */
   *,*:before,*:after{
-    box-sizing: inherit; 
+    box-sizing: inherit;
   }
   body{
-    margin:0; /** por default trae un margen de 8px */
-    overflow-x: hidden;/** que el desborde del eje horizontal se oculte y no genere la barra de desplazamiento*/
-    box-sizing: inherit;
+    background-image: url(../img/Screenshot_Full_-_Cinematic_5.jpeg);
+    background-size:center;
+    background-position: -300px -250px;
   }
   main{
     margin:0 10px;
@@ -42,15 +43,4 @@
   li{
     list-style-type: none;
   }
-  
-  .principal{
-    position: relative;
-    top:-10px;
-    text-align: center;
-    background-color: var(--boton-secundary);
-    height:100vh;
-  }
-  .principal h1{
-    padding:10px;
-    color:var(--font-color-reverse)
-  }
+ 

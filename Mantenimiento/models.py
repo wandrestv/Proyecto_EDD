@@ -28,6 +28,7 @@ class Departamento(models.Model):
 class Empleado(models.Model):
     id = models.AutoField(primary_key=True)
     nombre = models.CharField(max_length=100,blank=False,null=True)
+    cedula = models.IntegerField(blank=False,null=True)
     cargo = models.ForeignKey(Cargo,on_delete=models.CASCADE)
     departamento = models.ForeignKey(Departamento,on_delete=models.CASCADE)
     sueldo = models.DecimalField(max_digits=7,decimal_places=2)
